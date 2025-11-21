@@ -19,7 +19,7 @@ public class Main {
 
         Scafandr scaf2 = new Scafandr("skaf mk2", germo2);
 
-        Cosmonaft Znaika = new Cosmonaft("Znaika", scaf2);
+        Commander Znaika = new Commander("Znaika", scaf2);
 
         Propeller p3 = new Propeller(Boolean.FALSE);
         Germoshlem germo3 = new Germoshlem(Boolean.FALSE);
@@ -29,32 +29,54 @@ public class Main {
 
         Cosmonaft Kantik = new Cosmonaft("Kantik", scaf3);
 
-        Propeller p4 = new Propeller(Boolean.FALSE);
         Germoshlem germo4 = new Germoshlem(Boolean.FALSE);
-        germo2.setprop(p4);
 
-        Scafandr scaf4 = new Scafandr("skaf mk2", germo2);
+        Scafandr scaf4 = new Scafandr("skaf mk2", germo4);
 
-        Cosmonaft Kvantik = new Cosmonaft("Kvantik", scaf3);
+        Cosmonaft Ponchik = new Cosmonaft("Ponchik", scaf4);
+
+
+        Propeller p5 = new Propeller(Boolean.FALSE);
+        Germoshlem germo5 = new Germoshlem(Boolean.FALSE);
+        germo5.setprop(p5);
+
+        Scafandr scaf5 = new Scafandr("skaf mk2", germo5);
+
+        Cosmonaft Kvantik = new Cosmonaft("Kvantik", scaf5);
 
         Verevka verevk = new Verevka("Капрон");
 
         Kreslo_kachalka kreslo = new Kreslo_kachalka("Кресло-качалка");
+
+        Znaika.ncom(Kantik);
+        Znaika.ncom(Kvantik);
+        Znaika.ncom(Ponchik);
+
         kreslo.prikrep(Neznaika, Kantik, Kvantik);
         kreslo.privaz(verevk);
 
+        Znaika.Prikaz("privyaz", verevk);
+
+        Kantik.getcom();
+
         Znaika.privaz(verevk);
-        Kantik.privaz(verevk);
-        Kvantik.privaz(verevk);
 
         kreslo.kachat();
 
-        Znaika.flight();
-        Kvantik.flight();
-        Kantik.flight();
+
+        Vector v1 = new Vector(10, 10, 12, 10);
+
+        Znaika.Prikaz("polet", v1);
+
+        Znaika.flight(v1);
+
+        Vector v2 = new Vector(-10, -10, 0, 10);
 
         Neznaika.vyvalitsa();
         Neznaika.parashut();
+        Neznaika.padat();
+
+        Kvantik.padat();
 
         Znaika.parashut();
 

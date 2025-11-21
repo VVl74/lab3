@@ -2,8 +2,12 @@ package Neznai;
 
 public class Propeller {
     Boolean vkl;
+    int lopast;
+    String skor = "";
+
     public Propeller(boolean a) {
         vkl = a;
+        lopast = 4;
     }
 
     public void flight(Korot a) {
