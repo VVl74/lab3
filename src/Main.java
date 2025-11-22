@@ -1,6 +1,6 @@
-import Neznai.Cosmonaft;
-import Neznai.Germoshlem;
-import Neznai.*;
+import person.*;
+import things.*;
+import planet.Planet;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -11,21 +11,25 @@ public class Main {
         Germoshlem germo1 = new Germoshlem(Boolean.FALSE);
         Scafandr scaf1 = new Scafandr("skaf mk1", germo1);
 
-        Cosmonaft Neznaika = new Cosmonaft("Neznaika", scaf1);
+        Cosmonaft neznaika = new Cosmonaft("Neznaika", scaf1);
 
-        Propeller p2 = new Propeller(Boolean.FALSE);
+        Propeller p2 = new Propeller(4);
         Germoshlem germo2 = new Germoshlem(Boolean.FALSE);
         germo2.setprop(p2);
 
         Scafandr scaf2 = new Scafandr("skaf mk2", germo2);
 
-        Commander Znaika = new Commander("Znaika", scaf2);
+        Commander znaika = new Commander("Znaika", scaf2);
 
-        Propeller p3 = new Propeller(Boolean.FALSE);
+        Planet Luna = new Planet("Luna", 123);
+
+        znaika.add_planet(Luna);
+
+        Propeller p3 = new Propeller(4);
         Germoshlem germo3 = new Germoshlem(Boolean.FALSE);
         germo2.setprop(p3);
 
-        Scafandr scaf3 = new Scafandr("skaf mk2", germo2);
+        Scafandr scaf3 = new Scafandr("skaf mk2", germo3);
 
         Cosmonaft Kantik = new Cosmonaft("Kantik", scaf3);
 
@@ -33,54 +37,72 @@ public class Main {
 
         Scafandr scaf4 = new Scafandr("skaf mk2", germo4);
 
-        Cosmonaft Ponchik = new Cosmonaft("Ponchik", scaf4);
+        Cosmonaft ponchik = new Cosmonaft("Ponchik", scaf4);
 
 
-        Propeller p5 = new Propeller(Boolean.FALSE);
+        Propeller p5 = new Propeller(4);
         Germoshlem germo5 = new Germoshlem(Boolean.FALSE);
         germo5.setprop(p5);
 
         Scafandr scaf5 = new Scafandr("skaf mk2", germo5);
 
-        Cosmonaft Kvantik = new Cosmonaft("Kvantik", scaf5);
+        Cosmonaft kvantik = new Cosmonaft("Kvantik", scaf5);
 
         Verevka verevk = new Verevka("Капрон");
 
         Kreslo_kachalka kreslo = new Kreslo_kachalka("Кресло-качалка");
 
-        Znaika.ncom(Kantik);
-        Znaika.ncom(Kvantik);
-        Znaika.ncom(Ponchik);
+        znaika.new_podch(Kantik);
+        znaika.new_podch(kvantik);
+        znaika.new_podch(ponchik);
 
-        kreslo.prikrep(Neznaika, Kantik, Kvantik);
-        kreslo.privaz(verevk);
+        kreslo.attach(neznaika, Kantik, kvantik);
+        kreslo.tie(verevk);
 
-        Znaika.Prikaz("privyaz", verevk);
+        znaika.prikaz("tie", verevk);
 
-        Kantik.getcom();
+        Kantik.get_comander();
 
-        Znaika.privaz(verevk);
+        znaika.tie(verevk);
 
         kreslo.kachat();
 
 
         Vector v1 = new Vector(10, 10, 12, 10);
 
-        Znaika.Prikaz("polet", v1);
+        znaika.prikaz("flight", v1);
 
-        Znaika.flight(v1);
+        znaika.flight(v1);
 
-        Vector v2 = new Vector(-10, -10, 0, 10);
+        // Vector v2 = new Vector(-10, -10, 0, 10);
 
-        Neznaika.vyvalitsa();
-        Neznaika.parashut();
-        Neznaika.padat();
+        neznaika.vyvalitsa();
+        neznaika.parashut();
+        neznaika.fall();
 
-        Kvantik.padat();
+        kreslo.unpin(verevk);
 
-        Znaika.parashut();
+        kvantik.fall();
 
-        verevk.Get_all();
+        znaika.parashut();
+
+        verevk.get_all();
+
+        znaika.get_cord();
+
+        znaika.is_on_air();
+
+        kvantik.untie(verevk);
+
+        Vector v3 = new Vector(0, 0, -20, -20);
+        kvantik.flight(v3);
+        scaf5.germo.chek_germet();
+
+        kreslo.untie(verevk);
+
+        neznaika.pr_sost();
+
+        znaika.chek_planet();
 
 
         // Verevka v1

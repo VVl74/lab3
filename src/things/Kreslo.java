@@ -1,6 +1,6 @@
-package Neznai;
+package things;
 
-import java.util.TreeMap;
+import person.Korot;
 
 public class Kreslo implements UseVerevka {
     String name;
@@ -12,7 +12,7 @@ public class Kreslo implements UseVerevka {
         pr = Boolean.FALSE;
     }
 
-    public void prikrep(Korot v, Korot k1, Korot k2) {
+    public void attach(Korot v, Korot k1, Korot k2) {
         if (pr == Boolean.FALSE) {
             sidit = v;
             System.out.println(k1.name +" и " + k2.name + " привязали " + v.name + " к креслу");
@@ -22,18 +22,18 @@ public class Kreslo implements UseVerevka {
         }
     }
 
-    public void otkrep(Verevka v) {
+    public void unpin(Verevka v) {
         if (pr == Boolean.TRUE) {
             System.out.println(sidit + " отвязалось от верёвки");
             pr = Boolean.FALSE;
         }
     }
 
-    public void privaz(Verevka v) {
+    public void tie(Verevka v) {
         v.spis.add(name);
         System.out.println(name + " привязалось к верёвке");
     }
-    public void otvyaz(Verevka v) {
+    public void untie(Verevka v) {
         for (int i =0; i < v.spis.size(); i++) {
             if (v.spis.get(i) == name) {
                 v.spis.set(i, "");

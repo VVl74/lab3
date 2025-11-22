@@ -1,16 +1,26 @@
-package Neznai;
+package person;
+
+import planet.Planet;
 
 public class Korot {
-    String name;
-    String polog_tela;
+    public String name;
     boolean sost;
+    public Planet planet;
 
     public  Korot(String a) {
         name = a;
         sost = Boolean.TRUE;
     }
 
-    public int prSost() {
+    public void add_planet(Planet a) {
+        planet = a;
+    }
+
+    public void chek_planet() {
+        System.out.println(name + " на планете " + planet.name);
+    }
+
+    public int pr_sost() {
         if (sost == Boolean.FALSE) {
             System.out.println(name + " разбился");
             return 0;

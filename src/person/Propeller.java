@@ -1,13 +1,11 @@
-package Neznai;
+package person;
 
 public class Propeller {
-    Boolean vkl;
     int lopast;
     String skor = "";
 
-    public Propeller(boolean a) {
-        vkl = a;
-        lopast = 4;
+    public Propeller(int a) {
+        lopast = a;
     }
 
     public void flight(Korot a) {

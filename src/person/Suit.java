@@ -1,4 +1,4 @@
-package Neznai;
+package person;
 
 public class Suit {
     String name;

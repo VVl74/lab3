@@ -1,4 +1,6 @@
-package Neznai;
+package person;
+
+import things.*;
 
 public class Cosmonaft extends Korot implements UseVerevka {
     private Scafandr scaf;
@@ -17,13 +19,14 @@ public class Cosmonaft extends Korot implements UseVerevka {
         kord.speed_z = 0;
     }
 
-    public void padat() {
+    public void fall() {
         if (kord.z > 10) {
             if (scaf.germo.pr == Boolean.TRUE) {
                 parashut();
             } else {
                 super.sost = Boolean.FALSE;
                 System.out.println(name + " разбился");
+                scaf.germo.germet = Boolean.FALSE;
             }
         } else {
             kord.z = 0;
@@ -32,16 +35,16 @@ public class Cosmonaft extends Korot implements UseVerevka {
         }
     }
 
-    public void getcord() {
+    public void get_cord() {
         System.out.println(name + " находися в точке " + kord.x +" "+  kord.y +" "+ kord.z + " скорость падения " + kord.speed_z);
     }
 
-    public void getcom() {
+    public void get_comander() {
         System.out.println(name + " под командованием " + Com + " текущий приказ " + curpr);
     }
 
-    public void Air() {
-        if (prSost() == 0) {
+    public void is_on_air() {
+        if (pr_sost() == 0) {
             System.out.println(super.name + " разбился");
             return;
         }
@@ -52,16 +55,16 @@ public class Cosmonaft extends Korot implements UseVerevka {
         }
     }
 
-    public void privaz(Verevka vv) {
-        if (prSost() == 0) {
+    public void tie(Verevka vv) {
+        if (pr_sost() == 0) {
             System.out.println(super.name + " разбился");
             return;
         }
         vv.spis.add(super.name);
         System.out.println(super.name + " привязал себя к верёвке");
     }
-    public void otvyaz(Verevka vv) {
-        if (prSost() == 0) {
+    public void untie(Verevka vv) {
+        if (pr_sost() == 0) {
             System.out.println(super.name + " разбился");
             return;
         }
@@ -74,7 +77,7 @@ public class Cosmonaft extends Korot implements UseVerevka {
     }
 
     public void flight(Vector vec) {
-        if (prSost() == 0) {
+        if (pr_sost() == 0) {
             System.out.println(super.name + " разбился");
             return;
         }
@@ -95,6 +98,7 @@ public class Cosmonaft extends Korot implements UseVerevka {
         if (kord.z <= 0 && kord.speed_z < 0) {
             System.out.println(super.name + " разбился");
             super.sost = Boolean.FALSE;
+            scaf.germo.germet = Boolean.FALSE;
         }
         if (kord.z <= 0 && kord.speed_z == 0) {
             kord.z=0;
@@ -102,7 +106,7 @@ public class Cosmonaft extends Korot implements UseVerevka {
     }
 
     public void parashut() {
-        if (prSost() == 0) {
+        if (pr_sost() == 0) {
             System.out.println(super.name + " разбился");
             return;
         }

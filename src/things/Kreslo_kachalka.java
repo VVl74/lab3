@@ -1,4 +1,4 @@
-package Neznai;
+package things;
 
 public class Kreslo_kachalka extends Kreslo {
     public Kreslo_kachalka(String na) {
