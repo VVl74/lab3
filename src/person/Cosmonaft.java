@@ -35,16 +35,16 @@ public class Cosmonaft extends Korot implements UseVerevka {
         }
     }
 
-    public void get_cord() {
+    public void getCord() {
         System.out.println(name + " находися в точке " + kord.x +" "+  kord.y +" "+ kord.z + " скорость падения " + kord.speed_z);
     }
 
-    public void get_comander() {
+    public void getComander() {
         System.out.println(name + " под командованием " + Com + " текущий приказ " + curpr);
     }
 
-    public void is_on_air() {
-        if (pr_sost() == 0) {
+    public void isOnAir() {
+        if (prSost() == 0) {
             System.out.println(super.name + " разбился");
             return;
         }
@@ -56,7 +56,7 @@ public class Cosmonaft extends Korot implements UseVerevka {
     }
 
     public void tie(Verevka vv) {
-        if (pr_sost() == 0) {
+        if (prSost() == 0) {
             System.out.println(super.name + " разбился");
             return;
         }
@@ -64,7 +64,7 @@ public class Cosmonaft extends Korot implements UseVerevka {
         System.out.println(super.name + " привязал себя к верёвке");
     }
     public void untie(Verevka vv) {
-        if (pr_sost() == 0) {
+        if (prSost() == 0) {
             System.out.println(super.name + " разбился");
             return;
         }
@@ -77,7 +77,7 @@ public class Cosmonaft extends Korot implements UseVerevka {
     }
 
     public void flight(Vector vec) {
-        if (pr_sost() == 0) {
+        if (prSost() == 0) {
             System.out.println(super.name + " разбился");
             return;
         }
@@ -106,7 +106,7 @@ public class Cosmonaft extends Korot implements UseVerevka {
     }
 
     public void parashut() {
-        if (pr_sost() == 0) {
+        if (prSost() == 0) {
             System.out.println(super.name + " разбился");
             return;
         }

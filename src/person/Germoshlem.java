@@ -11,7 +11,7 @@ public class Germoshlem {
         System.out.println("у гермошлема теперь есть пропеллер");
     }
 
-    public void chek_germet() {
+    public void chekGermet() {
         if (germet) {
             System.out.println("шлем герметичен");
         } else {

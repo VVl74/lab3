@@ -12,7 +12,7 @@ public class Verevka {
         material = a;
     }
 
-    public void get_all() {
+    public void getAll() {
         for(int i =0; i < spis.size(); i++) {
             System.out.println(spis.get(i) + " привязан к шнуру");
         }

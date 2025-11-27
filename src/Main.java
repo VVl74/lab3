@@ -23,7 +23,7 @@ public class Main {
 
         Planet Luna = new Planet("Luna", 123);
 
-        znaika.add_planet(Luna);
+        znaika.addPlanet(Luna);
 
         Propeller p3 = new Propeller(4);
         Germoshlem germo3 = new Germoshlem(Boolean.FALSE);
@@ -52,16 +52,16 @@ public class Main {
 
         Kreslo_kachalka kreslo = new Kreslo_kachalka("Кресло-качалка");
 
-        znaika.new_podch(Kantik);
-        znaika.new_podch(kvantik);
-        znaika.new_podch(ponchik);
+        znaika.newPodch(Kantik);
+        znaika.newPodch(kvantik);
+        znaika.newPodch(ponchik);
 
         kreslo.attach(neznaika, Kantik, kvantik);
         kreslo.tie(verevk);
 
         znaika.prikaz("tie", verevk);
 
-        Kantik.get_comander();
+        Kantik.getComander();
 
         znaika.tie(verevk);
 
@@ -86,23 +86,23 @@ public class Main {
 
         znaika.parashut();
 
-        verevk.get_all();
+        verevk.getAll();
 
-        znaika.get_cord();
+        znaika.getCord();
 
-        znaika.is_on_air();
+        znaika.isOnAir();
 
         kvantik.untie(verevk);
 
         Vector v3 = new Vector(0, 0, -20, -20);
         kvantik.flight(v3);
-        scaf5.germo.chek_germet();
+        scaf5.germo.chekGermet();
 
         kreslo.untie(verevk);
 
-        neznaika.pr_sost();
+        neznaika.prSost();
 
-        znaika.chek_planet();
+        znaika.chekPlanet();
 
 
         // Verevka v1

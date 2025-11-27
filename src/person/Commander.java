@@ -14,7 +14,7 @@ public class Commander extends Cosmonaft {
         super(name, a);
     }
 
-    public void new_podch(Cosmonaft pr) {
+    public void newPodch(Cosmonaft pr) {
         pr.Com = super.name;
         podch.add(pr);
     }

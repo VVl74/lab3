@@ -12,15 +12,15 @@ public class Korot {
         sost = Boolean.TRUE;
     }
 
-    public void add_planet(Planet a) {
+    public void addPlanet(Planet a) {
         planet = a;
     }
 
-    public void chek_planet() {
+    public void chekPlanet() {
         System.out.println(name + " на планете " + planet.name);
     }
 
-    public int pr_sost() {
+    public int prSost() {
         if (sost == Boolean.FALSE) {
             System.out.println(name + " разбился");
             return 0;
