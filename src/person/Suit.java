@@ -1,13 +1,9 @@
 package person;
 
-public class Suit {
-    String name;
+public abstract class Suit {
+    final String name;
 
-    public Suit(String nm) {
-        name = nm;
-    }
-
-    public void puton(Korot a) {
-        System.out.println(a.name + "одел костюм");
+    public Suit(String newName) {
+        name = newName;
     }
 }

@@ -2,34 +2,31 @@ package person;
 
 import planet.Planet;
 
-public class Korot {
-    public String name;
-    boolean sost;
+public abstract class Korot {
+    final public String name;
+    public boolean alive;
     public Planet planet;
+    final public int strong;
 
-    public  Korot(String a) {
-        name = a;
-        sost = Boolean.TRUE;
+    public  Korot(String newName, int newStrong) {
+        name = newName;
+        alive = Boolean.TRUE;
+        strong = newStrong;
     }
 
-    public void addPlanet(Planet a) {
-        planet = a;
+    public void addPlanet(Planet newPlanet) {
+        planet = newPlanet;
     }
 
     public void chekPlanet() {
         System.out.println(name + " на планете " + planet.name);
     }
 
-    public int prSost() {
-        if (sost == Boolean.FALSE) {
-            System.out.println(name + " разбился");
-            return 0;
-        } else {
-            return 1;
-        }
+    public Boolean chekSost() {
+        return alive;
     }
 
-    public void vyvalitsa() {
+    public void fallOut() {
         System.out.println(name + " вывалился");
     }
 }

@@ -1,34 +1,34 @@
 package person;
 
 import things.Vector;
-import things.Verevka;
+import things.SimpleRope;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Commander extends Cosmonaft {
-    List<Cosmonaft> podch = new ArrayList<>();
-    String curpr = "";
+final public class Commander extends Cosmonaut {
+    private final List<Cosmonaut> subordinates = new ArrayList<>();
+    private String currentCommand = "";
 
-    public Commander(String name, Scafandr a) {
-        super(name, a);
+    public Commander(String name, SpaceSuit newScaf, int strong) {
+        super(name, newScaf, strong);
     }
 
-    public void newPodch(Cosmonaft pr) {
-        pr.Com = super.name;
-        podch.add(pr);
+    public void newSubordinate(Cosmonaut newSubordinate) {
+        newSubordinate.commander = super.name;
+        subordinates.add(newSubordinate);
     }
 
-    public void prikaz(String text, Object arg) {
-        System.out.println(super.name + " приказал " + text);
-        curpr = text;
-        for (int i =0; i < podch.size(); i++) {
-            podch.get(i).curpr = text;
-            if (text == "tie") {
-                podch.get(i).tie((Verevka) arg);
+    public void order(String method, Object data) {
+        System.out.println(super.name + " приказал " + method);
+        currentCommand = method;
+        for (int i = 0; i < subordinates.size(); i++) {
+            subordinates.get(i).currentCommand = method;
+            if (method == "tie") {
+                subordinates.get(i).tie((SimpleRope) data);
             }
-            if (text == "flight") {
-                podch.get(i).flight((Vector) arg);
+            if (method == "flight") {
+                subordinates.get(i).flight((Vector) data);
             }
         }
     }

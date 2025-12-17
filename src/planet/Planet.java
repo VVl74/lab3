@@ -1,9 +1,9 @@
 package planet;
 
-public class Planet extends Telo {
-    int radius;
-    public Planet(String name, int r) {
+public class Planet extends SpaceObject {
+    final public int radius;
+    public Planet(String name, int newRadius) {
         super(name);
-        radius = r;
+        radius = newRadius;
     }
 }
